@@ -1,0 +1,45 @@
+const Player = function(name, marker){
+    return {name,marker}
+}
+
+
+const john = Player('John', 'X');
+const mary = Player('Mary', 'O');
+
+
+//This function should handle all the logics of the game
+//will fill the array, check the win conditions as well
+//based on the details i don't think it gives any f's about who is playing
+
+
+const GameBoard = (() =>{
+    let gameBoard = ['','','','','','','','',''];
+    const checkWin = () =>{
+        if(gameBoard[0] =='X' && gameBoard[1] =='X' && gameBoard[2] =='X'){
+            return 1;
+        }
+    }
+    const markLocation = (marker, index) =>{
+        gameBoard[index] = marker;
+        console.log(gameBoard);
+        return checkWin();
+    }
+    return{
+        markLocation,
+    };
+})
+
+//Instead of using an IIFE i can bind this function to all the blocks of the game
+//this is not the game logic but the displayboard object
+
+
+const somelogic = (function(){
+    const gm = GameBoard();
+    console.log('some Logic working');
+    gm.markLocation(john.marker, 2)?console.log('you won'):console.log('you not win');
+    gm.markLocation(john.marker, 4)?console.log('you won'):console.log('you not win');
+    gm.markLocation(john.marker, 0)?console.log('you won'):console.log('you not win');
+    gm.markLocation(john.marker, 1)?console.log('you won'):console.log('you not win');
+    
+
+})();
