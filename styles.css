@@ -30,4 +30,8 @@ body{
     outline: solid var(--font-color);
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
 }
