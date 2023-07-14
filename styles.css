@@ -24,14 +24,35 @@ body{
     grid-template-rows: repeat(3,20%);
     justify-content: center;
     align-content: center;
+    
 }
 
 .block{
-    outline: solid var(--font-color);
+    border: solid var(--font-color);
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 4rem;
+}
+
+.block:hover{
+    background-color: #076a69;
+}
+
+.no-top-border{
+    border-top: none;
+}
+
+.no-left-border{
+    border-left: none;
+}
+
+.no-right-border{
+    border-right: none;
+}
+
+.no-bottom-border{
+    border-bottom:none
 }
