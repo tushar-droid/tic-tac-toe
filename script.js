@@ -1,7 +1,1 @@
-const Player = (name, marker) =>{
-    return {
-        name,
-        marker
-    };
-}
-
+console.log("Hello world")

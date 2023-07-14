@@ -1,52 +1,33 @@
+:root{
+    --bg-color: #042f2e;
+    --font-color:#f0fdf4;
+}
 body{
     margin:0;
-    padding:0;
+    padding: 0;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    width:100vw;
-
+    width: 100vw;
+    transition: all 1s ease-in-out;
+    flex-direction: column;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
+.grid-container{
+    width:50%;
+    height: 85%;
+    display: grid;
+    grid-template-columns: repeat(3,20%);
+    grid-template-rows: repeat(3,20%);
+    justify-content: center;
+    align-content: center;
+}
+
+.block{
+    outline: solid var(--font-color);
     height: 100%;
     width: 100%;
-
-}
-
-.game-grid{
-    flex: 2;
-    outline:lime solid;
-    margin:2%;
-    text-align: center;                 /*should be removed after adding the grid */
-}
-.player-details{
-    flex:1;
-    outline: yellow solid;
-    margin: 2%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-}
-form{
-    display: flex;
-    gap: 5rem;
-    align-items: center;
-}
-
-
-input{
-    font-size: 2rem;
-    padding-left: 10px;
-}
-.p-1,.p-2{
-    display: flex;
-    align-items: center;
-}
-
-.submit-btn{
-    width: 120px;
-    height:100%;
-    font-size: 2rem;
 }
