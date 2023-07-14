@@ -2,11 +2,11 @@ const gameBoard = (() =>{
     let board = ['','','','','','','','',''];
     
     const updateBoard = (index, marker) =>{
-        board[index] =marker;
+        if(checkIfEmpty(index))
+        {board[index] = marker;}
     }
     const getBoard = () => board;
     const checkIfEmpty = (index) =>{
-        console.log('index recieved: ', index)
         return board[index] ==='';
     }
     return{
@@ -18,14 +18,16 @@ const gameBoard = (() =>{
 
 
 const displayController = () =>{
-    const updateBoard = (index) =>{
+    const updateDOM = (index, marker) =>{
         if(gameBoard.checkIfEmpty(index)){
             const block = document.getElementById(index);
-            block.textContent = 'X';
+            block.textContent = marker;
+            return 1;
         }
+        else {return 0}
     }
     return{
-        updateBoard,
+        updateDOM,
     }
 }
 
@@ -33,12 +35,15 @@ const displayController = () =>{
 const gameFlow = (() =>{
     const blocks = document.querySelectorAll('.block');
     const dc = displayController();
+    let marker = 'X'
     blocks.forEach(block => {
         block.addEventListener('click', ()=>{
-            dc.updateBoard(block.id);
-            console.log(gameBoard.getBoard());
-            gameBoard.updateBoard(block.id, 'X');
-            console.log(gameBoard.getBoard());
+            if(dc.updateDOM(block.id, marker)){
+                if(marker=='X'){marker ='O'}
+                else{marker='X'}
+            };
+            gameBoard.updateBoard(block.id, marker)
+
         })
     });
 })();
