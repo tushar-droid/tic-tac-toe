@@ -1,0 +1,52 @@
+body{
+    margin:0;
+    padding:0;
+    height: 100vh;
+    width:100vw;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+}
+
+.game-grid{
+    flex: 2;
+    outline:lime solid;
+    margin:2%;
+    text-align: center;                 /*should be removed after adding the grid */
+}
+.player-details{
+    flex:1;
+    outline: yellow solid;
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+}
+form{
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+}
+
+
+input{
+    font-size: 2rem;
+    padding-left: 10px;
+}
+.p-1,.p-2{
+    display: flex;
+    align-items: center;
+}
+
+.submit-btn{
+    width: 120px;
+    height:100%;
+    font-size: 2rem;
+}
