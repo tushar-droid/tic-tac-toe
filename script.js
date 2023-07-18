@@ -14,7 +14,6 @@ const gameBoard = (() =>{
         let winner = 'none'
         wincases.forEach(wincase => {
             if(board[wincase[0]]==marker && board[wincase[1]]==marker && board[wincase[2]]==marker){
-                console.log(`${marker} won this round`);
                 winner = marker;
             }    
         });
@@ -24,7 +23,7 @@ const gameBoard = (() =>{
     const updateBoard = (index, marker) =>{
         if(checkIfEmpty(index))
         {board[index] = marker;}
-        console.log(board);
+
     }
     const getBoard = () => board;
     const checkIfEmpty = (index) =>{
@@ -48,8 +47,18 @@ const displayController = () =>{
         }
         else {return 0}
     }
+
+    const AnnounceWinner = (winner) =>{
+        console.log('The Announced winner is: ', winner);
+        const modal = document.querySelector('.modal');
+        const win_title = document.querySelector('.winning-marker');
+        win_title.textContent = `The winner for this round is: ${winner}`;
+        modal.style = 'display:flex';
+
+    }
     return{
         updateDOM,
+        AnnounceWinner,
     }
 }
 
@@ -66,8 +75,10 @@ const gameFlow = (() =>{
                 winner = gameBoard.checkWin(marker);
                 if(marker=='X'){marker ='O'}
                 else{marker='X'}
-                console.log('winner',winner);
             };
+            if(winner!='none'){
+                dc.AnnounceWinner(winner);
+            }
         })
     });
 })();
