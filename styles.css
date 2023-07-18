@@ -14,6 +14,7 @@ body{
     width: 100vw;
     transition: all 1s ease-in-out;
     flex-direction: column;
+    font-family: 'Diphylleia', serif;
 }
 
 .grid-container{
@@ -68,6 +69,37 @@ body{
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.565);
     font-size: larger;
+}
+
+.modal-contianer{
+    background-color: white;
+    height: 60%;
+    width: 35%;
+    border-radius: 20px;
+    display: flex;
+    color:var(--bg-color);
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-contianer > h1{
+    margin-top:20%;
+}
+
+.play-again{
+    width: 40%;
+    margin-top: 10%;
+    font-size: larger;
+    padding: 10px 10px;
+    cursor: pointer;
+    border: none;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    border-radius: 10px;
+    transition: background-color ease 1s;
+}
 
 
+.play-again:hover{
+    background-color:#086564;
 }
