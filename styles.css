@@ -103,3 +103,27 @@ body{
 .play-again:hover{
     background-color:#086564;
 }
+
+
+@media only screen and (max-width: 500px) {
+
+    .grid-container{
+        width:100%;
+        height: 75%;
+    }   
+
+    .modal-contianer{
+        width: 80%;
+        height: 40%;
+        font-size: small;
+        text-align: center;
+    }
+
+    .modal-contianer > h1{
+        margin: 20% 20%;
+    }
+    
+
+
+
+  }
